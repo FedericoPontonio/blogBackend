@@ -1,0 +1,43 @@
+GET http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "username": "franco", 
+    "password": "fraaancooo"
+}
+
+### test for test user2
+
+POST http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidGVzdCB1c2VyMiIsImlhdCI6MTczNDc5MTczNn0.4rnbpm-WZRzb5RuLov8UZZj5YkCAtqUOZ57RCAW2h54
+Content-Type: application/json
+
+{
+    "title":"test with token",
+    "caption":"",
+    "body":"second test"
+}
+
+### test for franco
+
+POST http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZnJhbmNvIiwiaWF0IjoxNzM0NzkzODY1fQ.Z_pKubb5qdc2wwbKQ-ASDxzmAcYGNnjc3swOa3fDf48
+Content-Type: application/json
+
+{
+    "title":"test with token",
+    "caption":"",
+    "body":"second test"
+}
+
+### get post info and related comments
+GET http://localhost:3000/posts/5
+
+### create comment
+POST http://localhost:3000/comments/5
+Content-Type: application/json
+
+{
+    "userId":"6",
+    "text":"test first comment creation"
+}
