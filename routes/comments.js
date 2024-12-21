@@ -18,4 +18,15 @@ commentsRouter.post('/:postId', async (req, res) => {
     
 })
 
+
+
+// postRouter.get('/:id', async (req, res) => {
+//     const post = await controllers.getPostById(+req.params.id);
+//     const comments = await controllers.getComments(+req.params.id);
+//     res.json({
+//         post: post,
+//         comments: comments
+//     })
+// });
+
 module.exports = commentsRouter;

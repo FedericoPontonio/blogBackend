@@ -20,12 +20,13 @@ async function getComments(id) {
 }
 
 
-async function createPost(reqBody) {
+async function createPost(reqBody, userId) {
     await prisma.post.create({
         data: {
             title: reqBody.title,
             caption: reqBody.caption,
-            body: reqBody.body
+            body: reqBody.body,
+            author: userId
         }
     })
 };

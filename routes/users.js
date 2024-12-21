@@ -17,6 +17,7 @@ usersRouter.get('/login', middlewares.verifyPassword, (req, res) => {
 //create user
 usersRouter.post('/', async (req, res) =>{
     try {
+        //createUser expects username and password in the req.body
         await controllers.createUser(req.body)
         res.json({
             message: "user successfully created"

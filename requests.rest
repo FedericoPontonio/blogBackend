@@ -1,24 +1,33 @@
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "username": "francesca", 
+    "password": "passwordFrancesca"
+}
+
+###
 GET http://localhost:3000/users/login
 Content-Type: application/json
 
 {
-    "username": "franco", 
-    "password": "fraaancooo"
+    "username": "francesca", 
+    "password": "passwordFrancesca"
 }
 
-### test for test user2
+### test for test federico-create post
 
 POST http://localhost:3000/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidGVzdCB1c2VyMiIsImlhdCI6MTczNDc5MTczNn0.4rnbpm-WZRzb5RuLov8UZZj5YkCAtqUOZ57RCAW2h54
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZnJhbmNlc2NhIiwiaWF0IjoxNzM0ODA0NTA1fQ.ru11KykmwGwHWdzxv68ByZ7iMnyj_PGuzFxyEiJbde8
 Content-Type: application/json
 
 {
-    "title":"test with token",
+    "title":"test for francesca's post",
     "caption":"",
     "body":"second test"
 }
 
-### test for franco
+### test for franco-create post
 
 POST http://localhost:3000/posts
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZnJhbmNvIiwiaWF0IjoxNzM0NzkzODY1fQ.Z_pKubb5qdc2wwbKQ-ASDxzmAcYGNnjc3swOa3fDf48
@@ -31,7 +40,7 @@ Content-Type: application/json
 }
 
 ### get post info and related comments
-GET http://localhost:3000/posts/5
+GET http://localhost:3000/posts
 
 ### create comment
 POST http://localhost:3000/comments/5

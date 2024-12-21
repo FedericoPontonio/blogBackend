@@ -15,8 +15,8 @@ datasource db {
 
 model Post {
   id        Int       @id @default(autoincrement())
-  author    Int
-  user      User      @relation(fields: [id], references: [id])
+  author    Int       @default(1)
+  user      User      @relation(fields: [author], references: [id])
   title     String
   caption   String
   body      String
