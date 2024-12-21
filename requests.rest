@@ -40,7 +40,7 @@ Content-Type: application/json
 }
 
 ### get post info and related comments
-GET http://localhost:3000/posts
+GET http://localhost:3000/posts/25
 
 ### create comment
 POST http://localhost:3000/comments/5
