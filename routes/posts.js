@@ -24,9 +24,11 @@ postRouter.get('/:id', async (req, res) => {
 
 //create post
 postRouter.post('/', verifyToken, async (req, res) => {
+    let user;
+    let userId;
     try {   //check if token valid / corresponds to a user
-        const user = await controllersUsers.getUserByUsername(req.user.name)
-        const userId = user.id
+        user = await controllersUsers.getUserByUsername(req.user.name)
+        userId = user.id
     } catch (error) {
         return res.status(409).json({
             message: "Credentials unauthorized. you will be logged out."

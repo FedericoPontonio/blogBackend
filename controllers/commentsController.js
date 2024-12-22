@@ -2,12 +2,12 @@ const { PrismaClient } = require('@prisma/client')
 const { post } = require('../routes/posts')
 const prisma = new PrismaClient()
 
-async function createComment(postId, reqBody) {
+async function createComment(postId, text, userId) {
     await prisma.comment.create({
         data: {
             postId: postId,
-            userId: +reqBody.userId,
-            text: reqBody.text,
+            userId: userId,
+            text: text,
         }
     })
 }

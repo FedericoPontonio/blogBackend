@@ -3,8 +3,8 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-    "username": "francesca", 
-    "password": "passwordFrancesca"
+    "username": "sanchez", 
+    "password": "passwordSanchez"
 }
 
 ### login / get token
@@ -12,20 +12,22 @@ GET http://localhost:3000/users/login
 Content-Type: application/json
 
 {
-    "username": "francesca", 
-    "password": "passwordFrancesca"
+    "username": "sanchez", 
+    "password": "passwordSanchez"
 }
 
 ### test for user federico-create post
 
 POST http://localhost:3000/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZnJhbmNlc2NhIiwiaWF0IjoxNzM0ODA0NTA1fQ.ru11KykmwGwHWdzxv68ByZ7iMnyj_PGuzFxyEiJbde8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic2FuY2hleiIsImlhdCI6MTczNDg3NjM2MX0.KAsJn8pZEXt4twl90rK9EymzKokZc5TodEUYATu_5n0
 Content-Type: application/json
 
 {
-    "title":"test for francesca's post",
-    "caption":"",
-    "body":"second test"
+    "title":"post created from sanchez",
+    "caption":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
+    "body":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+"
 }
 
 ### test for user unexistent user-create post
@@ -45,9 +47,17 @@ GET http://localhost:3000/posts/25
 
 ### create comment
 POST http://localhost:3000/comments/25
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic2FuY2hleiIsImlhdCI6MTczNDg3NTk0OX0.sF52dthE65yPibol7n2RCxR0N5XuKzz0L82yyE6_Ds0
 Content-Type: application/json
 
 {
-    "userId":"1",
-    "text":"hellooooooooooo"
+    "text":"prova per sanchez"
+}
+
+### delete user
+DELETE http://localhost:3000/users/3
+Content-Type: application/json
+
+{
+    "username": "francesca"
 }
