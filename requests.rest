@@ -1,3 +1,4 @@
+### create user
 POST http://localhost:3000/users
 Content-Type: application/json
 
@@ -6,7 +7,7 @@ Content-Type: application/json
     "password": "passwordFrancesca"
 }
 
-###
+### login / get token
 GET http://localhost:3000/users/login
 Content-Type: application/json
 
@@ -15,7 +16,7 @@ Content-Type: application/json
     "password": "passwordFrancesca"
 }
 
-### test for test federico-create post
+### test for user federico-create post
 
 POST http://localhost:3000/posts
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZnJhbmNlc2NhIiwiaWF0IjoxNzM0ODA0NTA1fQ.ru11KykmwGwHWdzxv68ByZ7iMnyj_PGuzFxyEiJbde8
@@ -27,7 +28,7 @@ Content-Type: application/json
     "body":"second test"
 }
 
-### test for franco-create post
+### test for user unexistent user-create post
 
 POST http://localhost:3000/posts
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZnJhbmNvIiwiaWF0IjoxNzM0NzkzODY1fQ.Z_pKubb5qdc2wwbKQ-ASDxzmAcYGNnjc3swOa3fDf48
@@ -43,10 +44,10 @@ Content-Type: application/json
 GET http://localhost:3000/posts/25
 
 ### create comment
-POST http://localhost:3000/comments/5
+POST http://localhost:3000/comments/25
 Content-Type: application/json
 
 {
-    "userId":"6",
-    "text":"test first comment creation"
+    "userId":"1",
+    "text":"hellooooooooooo"
 }

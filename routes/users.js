@@ -11,19 +11,19 @@ usersRouter.get('/login', middlewares.verifyPassword, (req, res) => {
     const username = req.body.username;
     const user = { name: username }
     const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET)
-    res.json({ accessToken })
+    res.status(200).json({ accessToken })
 })
 
 //create user
-usersRouter.post('/', async (req, res) =>{
+usersRouter.post('/', middlewares.checkUsernameUniquenessOnCreation, async (req, res) =>{
     try {
         //createUser expects username and password in the req.body
         await controllers.createUser(req.body)
-        res.json({
+        res.status(201).json({
             message: "user successfully created"
         })
     } catch (error) {
-        res.json({
+        res.status(400).json({
             message:"error creating user"
         })
     }

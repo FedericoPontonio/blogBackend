@@ -24,9 +24,15 @@ postRouter.get('/:id', async (req, res) => {
 
 //create post
 postRouter.post('/', verifyToken, async (req, res) => {
-    const user = await controllersUsers.getUserByUsername(req.user.name)
-    const userId = user.id
-
+    try {   //check if token valid / corresponds to a user
+        const user = await controllersUsers.getUserByUsername(req.user.name)
+        const userId = user.id
+    } catch (error) {
+        return res.status(409).json({
+            message: "Credentials unauthorized. you will be logged out."
+            //a log out function should follow this error
+        })
+    }    
     try {
         //the function expects the request body to be {title, caption, body}
         await controllers.createPost(req.body, userId);
