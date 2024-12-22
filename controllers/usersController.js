@@ -2,6 +2,8 @@ const { PrismaClient } = require('@prisma/client')
 const { json } = require('express')
 const { use } = require('passport')
 const prisma = new PrismaClient()
+const bcript = require('bcryptjs')
+
 
 async function getUserByUsername(username) {
     return await prisma.user.findUnique({
@@ -15,7 +17,7 @@ async function createUser(reqBody) {
     await prisma.user.create({
         data: {
             username: reqBody.username,
-            password: reqBody.password,
+            password: await bcript.hash(reqBody.password, 10)
         }
     })
 }

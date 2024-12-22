@@ -3,8 +3,9 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-    "username": "sanchez", 
-    "password": "passwordSanchez"
+    "username": "andrea", 
+    "password": "passwordAndrea",
+    "confirmPassword": "passwordAndrea"
 }
 
 ### login / get token
@@ -12,8 +13,8 @@ GET http://localhost:3000/users/login
 Content-Type: application/json
 
 {
-    "username": "sanchez", 
-    "password": "passwordSanchez"
+    "username": "andrea", 
+    "password": "passwordAndrea"
 }
 
 ### test for user federico-create post
@@ -25,9 +26,7 @@ Content-Type: application/json
 {
     "title":"post created from sanchez",
     "caption":"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
-    "body":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-"
+    "body":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 }
 
 ### test for user unexistent user-create post
@@ -46,18 +45,18 @@ Content-Type: application/json
 GET http://localhost:3000/posts/25
 
 ### create comment
-POST http://localhost:3000/comments/25
+POST http://localhost:3000/comments/30
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic2FuY2hleiIsImlhdCI6MTczNDg3NTk0OX0.sF52dthE65yPibol7n2RCxR0N5XuKzz0L82yyE6_Ds0
 Content-Type: application/json
 
 {
-    "text":"prova per sanchez"
+    "text":"ma che post di merda dai"
 }
 
 ### delete user
-DELETE http://localhost:3000/users/3
+DELETE http://localhost:3000/users/11
 Content-Type: application/json
 
 {
-    "username": "francesca"
+    "username": "sanchez"
 }

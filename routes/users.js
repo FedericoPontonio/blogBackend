@@ -15,7 +15,7 @@ usersRouter.get('/login', middlewares.verifyPassword, (req, res) => {
 })
 
 //create user
-usersRouter.post('/', middlewares.checkUsernameUniquenessOnCreation, async (req, res) =>{
+usersRouter.post('/', middlewares.checkUsernameUniquenessOnCreation, middlewares.checkPasswordMatch, async (req, res) =>{
     try {
         //createUser expects username and password in the req.body
         await controllers.createUser(req.body)
